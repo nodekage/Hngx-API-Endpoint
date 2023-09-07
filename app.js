@@ -10,7 +10,7 @@ app.get('/api', (req, res) => {
   const currentDay = new Date().toLocaleString('en-US', { weekday: 'long' });
 
   // UTC time within a +/-2 minute window
-  const currentTime = new Date(Date.now() - 120000).toISOString();
+  const currentTime = new Date().toISOString().replace(/\.\d{3}Z$/, 'Z');
 
   // JSON response
   const response = {
